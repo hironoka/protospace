@@ -1,24 +1,24 @@
-#db design
+# db design
 
-##Tweet table
-###assosiation
+## Tweet table
+### assosiation
    tweets belongs to user
    tweet has many comments
    tweet has many images
    tweet has many likes
-###column
+### column
 -id            :integer
 -catch_copy    :text
 -concept       :text
 -created_at    :date
 -updated_at    :date
 
-##User table
-###assosiation
+## User table
+### assosiation
    user has many tweets
    user has many comments
    user has many likes
-###column
+### column
 -id            :integer
 -name          :string
 -email         :string
@@ -30,30 +30,30 @@
 -created_at    :date
 -updated_at    :date
 
-##Comment table
-###assosiation
+## Comment table
+### assosiation
    comments belongs to user
    comments belongs to tweet
-###column
+### column
 -id            :integer
 -user_id       :integer
 -comment       :text
 -created_at    :integer
 -updated_at    :integer
 
-##Image table
-###assosiation
+## Image table
+### assosiation
    images belongs to tweet
-###column
+### column
 -id            :integer
 -tweet_id      :integer
 -image         :string
 
-##Like table
-###assosiation
+## Like table
+### assosiation
    likes belongs to tweet
    likes belongs to user
-###column
+### column
 -id            :integer
 -tweet_id      :integer
 -user_id       :integer
