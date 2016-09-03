@@ -1,21 +1,20 @@
 # db design
 
-## Tweet table
+## prototypes table
 ### assosiation
-   tweets belongs to user
-   tweet has many comments
-   tweet has many images
-   tweet has many likes
+   prototypes belongs to user
+   prototype has many comments
+   prototype has many images
+   prototype has many likes
 ### column
 -id            :integer
+-user_id       :integer
 -catch_copy    :text
 -concept       :text
--created_at    :date
--updated_at    :date
 
-## User table
+## users table
 ### assosiation
-   user has many tweets
+   user has many prototypes
    user has many comments
    user has many likes
 ### column
@@ -27,33 +26,31 @@
 -member        :string
 -profile       :text
 -works         :text
--created_at    :date
--updated_at    :date
 
-## Comment table
+## comments table
 ### assosiation
    comments belongs to user
-   comments belongs to tweet
+   comments belongs to prototype
 ### column
 -id            :integer
 -user_id       :integer
+-prototype_id  :integer
 -comment       :text
--created_at    :integer
--updated_at    :integer
 
-## Image table
+## images table
 ### assosiation
-   images belongs to tweet
+   images belongs to prototype
 ### column
 -id            :integer
--tweet_id      :integer
--image         :string
+-prototype_id  :integer
+-file          :string
+-stasus        :string
 
 ## Like table
 ### assosiation
-   likes belongs to tweet
+   likes belongs to prototype
    likes belongs to user
 ### column
 -id            :integer
--tweet_id      :integer
+-prototype_id  :integer
 -user_id       :integer
