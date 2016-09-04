@@ -44,7 +44,7 @@
 - id            :integer
 - prototype_id  :integer
 - file          :string
-- stasus        :string
+- status        :integer
 
 ## Like table
 ### assosiation
