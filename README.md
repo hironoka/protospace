@@ -1,6 +1,7 @@
 # db design
 
-## prototype table
+## prototypes table
+
 ### assosiation
    prototypes belongs to user
    prototype has many comments
@@ -12,7 +13,7 @@
 - catch_copy    :text
 - concept       :text
 
-## User table
+## users table
 ### assosiation
    user has many prototypes
    user has many comments
@@ -27,7 +28,7 @@
 - profile       :text
 - works         :text
 
-## Comment table
+## comments table
 ### assosiation
    comments belongs to user
    comments belongs to prototype
@@ -37,13 +38,13 @@
 - prototype_id  :integer
 - comment       :text
 
-## Image table
+## images table
 ### assosiation
    images belongs to prototype
 ### column
 - id            :integer
 - prototype_id  :integer
-- image         :string
+- file          :string
 - status        :integer
 
 ## Like table
