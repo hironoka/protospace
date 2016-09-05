@@ -1,59 +1,56 @@
 # db design
 
-## Tweet table
+## prototype table
 ### assosiation
-   tweets belongs to user
-   tweet has many comments
-   tweet has many images
-   tweet has many likes
+   prototypes belongs to user
+   prototype has many comments
+   prototype has many images
+   prototype has many likes
 ### column
--id            :integer
--catch_copy    :text
--concept       :text
--created_at    :date
--updated_at    :date
+- id            :integer
+- user_id       :integer
+- catch_copy    :text
+- concept       :text
 
 ## User table
 ### assosiation
-   user has many tweets
+   user has many prototypes
    user has many comments
    user has many likes
 ### column
--id            :integer
--name          :string
--email         :string
--password      :string
--avatar        :string
--member        :string
--profile       :text
--works         :text
--created_at    :date
--updated_at    :date
+- id            :integer
+- name          :string
+- email         :string
+- password      :string
+- avatar        :string
+- member        :string
+- profile       :text
+- works         :text
 
 ## Comment table
 ### assosiation
    comments belongs to user
-   comments belongs to tweet
+   comments belongs to prototype
 ### column
--id            :integer
--user_id       :integer
--comment       :text
--created_at    :integer
--updated_at    :integer
+- id            :integer
+- user_id       :integer
+- prototype_id  :integer
+- comment       :text
 
 ## Image table
 ### assosiation
-   images belongs to tweet
+   images belongs to prototype
 ### column
--id            :integer
--tweet_id      :integer
--image         :string
+- id            :integer
+- prototype_id  :integer
+- image         :string
+- status        :integer
 
 ## Like table
 ### assosiation
-   likes belongs to tweet
+   likes belongs to prototype
    likes belongs to user
 ### column
--id            :integer
--tweet_id      :integer
--user_id       :integer
+- id            :integer
+- prototype_id  :integer
+- user_id       :integer
