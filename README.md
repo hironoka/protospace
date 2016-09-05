@@ -1,6 +1,7 @@
 # db design
 
 ## prototypes table
+
 ### assosiation
    prototypes belongs to user
    prototype has many comments
