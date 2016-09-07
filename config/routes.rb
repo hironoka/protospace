@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resouces :prototypes
+  root 'prototypes#index'
+  resources :prototypes
 end
