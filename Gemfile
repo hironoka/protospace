@@ -28,6 +28,7 @@ gem 'erb2haml'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pry-rails'
+gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
