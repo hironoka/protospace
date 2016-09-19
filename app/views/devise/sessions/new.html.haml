@@ -1,0 +1,25 @@
+.container.form-signin
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = devise_error_messages!
+    %h2.form-signin-heading Please sign in
+    / .sr-only
+    = f.label :email, class:"sr-only" ,for: "inputEmail"
+    / #inputEmail.form-control
+    = f.email_field :email, autofocus: true, placeholder: "Email address", required: ""
+    / .sr-only
+    = f.label :password, class:"sr-only", for: "inputPassword"
+    / #inputPassword.form-control
+    = f.password_field :password, placeholder: "Password", required: ""
+    .checkbox
+      %label
+        = f.check_box :remember_me
+        Remember me
+    = f.submit value: "Sign in", class: 'btn btn-lg btn-primary btn-block'
+
+  .text-center
+    %p
+      Not a member?
+      = link_to "Sign up now", new_user_registration_path
+
+
+
