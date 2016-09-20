@@ -1,9 +1,8 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_index, :except => [:index]
+  before_action :move_to_index, except: [:index]
+
   def index
     @prototypes = Prototype.new
-    @prototype_number = @prototypes.length
-    end
   end
 
   def new
