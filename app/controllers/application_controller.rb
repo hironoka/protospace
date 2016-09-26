@@ -8,4 +8,13 @@ def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :member, :profile, :works])
       devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
 end
+
+def alert_user_edit_error_message
+  flash[:error] = 'Your information is not enough'
+end
+
+def alert_user_edit_successe_message
+  flash[:notice] = 'Edit information successfully'
+end
+
 end
