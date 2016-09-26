@@ -9,3 +9,4 @@ def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
 end
 end
+Contact GitHub API Training Shop Blog About
