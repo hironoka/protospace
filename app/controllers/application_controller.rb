@@ -14,7 +14,7 @@ def alert_user_edit_error_message
 end
 
 def alert_user_edit_successe_message
-  flash[:notice] = 'Edit information successfully'
+  flash[:success] = 'Edit information successfully'
 end
 
 end
