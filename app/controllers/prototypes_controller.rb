@@ -42,7 +42,7 @@ private
   end
 
   def prototype_params
-    params.require(:prototype).permit(:user_id, :title, :catch_copy, :concept, images_attributes: [:id, :name, :status]
+    params.require(:prototype).permit(:user_id, :title, :catch_copy, :concept, images_attributes: [:id, :file, :status]
     )
   end
 
