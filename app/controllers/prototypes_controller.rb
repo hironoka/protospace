@@ -16,7 +16,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path, notice: 'Pust prototype successfully'
     else
-      render :new
+      redirect_to new_prototype_path, alert: 'something is empty'
     end
   end
 
