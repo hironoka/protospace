@@ -7,19 +7,27 @@
           = f.text_field :title, placeholder: "Title"
       .row
         .col-md-12
-          .cover-image-upload
-            = f.file_field value: "file"
+          .cover-image-upload.js-preview-image
+            = f.fields_for :images, @prototype.images do |images_f|
+              = images_f.file_field :file
+              = images_f.hidden_field :status, value: 0
         .col-md-12
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
               .image-upload
-                = f.file_field value: "file"
+                = f.fields_for :images, @prototype.images do |images_f|
+                  = images_f.file_field :file
+                  = images_f.hidden_field :status, value: "1"
             %li.list-group-item.col-md-4
               .image-upload
-                = f.file_field value: "file"
+                = f.fields_for :images, @prototype.images do |images_f|
+                  = images_f.file_field :file
+                  = images_f.hidden_field :status, value: "1"
             %li.list-group-item.col-md-4
               .image-upload-plus
-                = f.file_field value: "file"
+                = f.fields_for :images, @prototype.images do |images_f|
+                  = images_f.file_field :file
+                  = images_f.hidden_field :status, value: "1"
                 %span +
       .row.proto-description
         .col-md-12
