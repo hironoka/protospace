@@ -3,6 +3,6 @@ class Image < ActiveRecord::Base
 
   mount_uploader :file, ImageUploader
 
-  enum status: %i(main sub)
-  validates :file, presence: true
+  enum status: {main: 0, sub: 1}
+  validates :file, :status, presence: true
 end
