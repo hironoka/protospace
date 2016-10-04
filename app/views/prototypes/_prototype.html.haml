@@ -1,13 +1,33 @@
-.thumbnail
-  %a{href: ""}
-    = image_tag("sample.png")
-    .caption
-      %h3 Salvation Army on iPad App Wireframe
-      .proto-meta
-        .proto-date
-          Apr 26
-      %ul.proto-tag-list.list-inline
-        %li
-          %a{href: "#", class: "btn btn-default"} iPad
-        %li
-          %a{href: "#", class: "btn btn-default"} wireframe
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    %a{href: ""}
+      = image_tag("sample.png")
+      .caption
+        %h3
+          = link_to prototype.title, prototype_path(prototype.id)
+        .proto-meta
+          .proto-user
+            = link_to prototype.user.name, user_path(prototype.user.id)
+          .proto-posted
+            = prototype.created_at.strftime("%b %d")
+        %ul.proto-tag-list.list-inline
+          %li
+            %a{href: "#", class: "btn btn-default"} iPad
+          %li
+            %a{href: "#", class: "btn btn-default"} wireframe
+
+
+-# .thumbnail
+-#   -# = link_to image_tag(prototype.main_image.name), prototype_path(prototype.id)
+-#   .caption
+-#     %h3
+-#       = prototype.title
+-#     .proto-meta
+-#       .proto-user
+-#         = link_to "by #{prototype.user.name}", user_path(prototype.user.id), method: :get
+-#       .proto-posted
+-#         = l prototype.created_at, format: :default
+-#     %ul.proto-tag-list.list-inline
+-#       -# - prototype.tags.each do |tag|
+-#       -#   %li
+-#       -#     =link_to tag.name, tag_path(tag.id), class: "btn btn-default"
