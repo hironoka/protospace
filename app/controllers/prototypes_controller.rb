@@ -45,6 +45,7 @@ private
 
   def prototype_params
     params.require(:prototype).permit(
+    :user_id,
     :title,
     :catch_copy,
     :concept,
