@@ -5,7 +5,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit]
 
   def index
-    @prototypes = Prototype.all
+    @prototypes = Prototype.eager_load(:user,:main_image)
   end
 
   def new
