@@ -5,7 +5,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit]
 
   def index
-    @prototypes = Prototype.all
+    @prototypes = Prototype.eager_load(:user,:main_image)
   end
 
   def new
@@ -45,6 +45,7 @@ private
 
   def prototype_params
     params.require(:prototype).permit(
+    :user_id,
     :title,
     :catch_copy,
     :concept,
