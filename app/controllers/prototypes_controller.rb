@@ -1,8 +1,8 @@
 class PrototypesController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :move_to_index, except: [:index]
-  before_action :set_prototype, only: [:show, :edit]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
     @prototypes = Prototype.eager_load(:user,:main_image)
@@ -26,12 +26,16 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
+    @prototype.destroy
+    redirect_to :root, notice: 'Deleted prototype successfully'
   end
 
   def edit
   end
 
   def update
+    @prototype.update(prototype_params)
+    redirect_to prototype_path, notice: 'Updated prototype successfully'
   end
 
 private
