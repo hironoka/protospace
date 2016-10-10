@@ -27,6 +27,7 @@ body {
   text-transform: uppercase;
   letter-spacing: inherit;
   color: rgba(255, 255, 255, 0.87);
+  display: inline-block;
 }
 
 .btn-default, .btn-link {
@@ -292,6 +293,15 @@ body {
   .thumbnail {
     border-radius: 0;
     padding: 0;
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
   }
 
   h3 {
