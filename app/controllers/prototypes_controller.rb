@@ -31,11 +31,16 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    @main_image = @prototype.main_image
+    @sub_images = @prototype.sub_image
   end
 
   def update
-    @prototype.update(prototype_params)
-    redirect_to prototype_path, notice: 'Updated prototype successfully'
+    if @prototype.update(prototype_params)
+      redirect_to :root, notice: 'Updated prototype successfully'
+    else
+      redirect_to :back, alert: 'something is empty'
+    end
   end
 
 private
