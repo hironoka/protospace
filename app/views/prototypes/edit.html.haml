@@ -13,7 +13,7 @@
               = image_fields.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-            - 3.times do
+            - @sub_images.each do
               %li.list-group-item.col-md-4
                 .image-upload
                   = f.fields_for :images, @sub_images do |image_fields|
