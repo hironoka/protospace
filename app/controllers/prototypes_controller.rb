@@ -26,8 +26,11 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    @prototype.destroy
-    redirect_to :root, notice: 'Deleted prototype successfully'
+    if @prototype.destroy
+      redirect_to :root, notice: 'Deleted prototype successfully'
+    else
+      redirect_to :back, alert: 'Something is empty'
+    end
   end
 
   def edit
@@ -39,7 +42,7 @@ class PrototypesController < ApplicationController
     if @prototype.update(prototype_params)
       redirect_to :root, notice: 'Updated prototype successfully'
     else
-      redirect_to :back, alert: 'something is empty'
+      redirect_to :back, alert: 'Something is empty'
     end
   end
 
