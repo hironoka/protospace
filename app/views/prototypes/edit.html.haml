@@ -13,12 +13,11 @@
               = image_fields.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
-            - @sub_images.each do
+            = f.fields_for :images, @sub_images do |image_fields|
               %li.list-group-item.col-md-4
                 .image-upload
-                  = f.fields_for :images, @sub_images do |image_fields|
-                    = image_fields.file_field :file
-                    = image_fields.hidden_field :status, value: "sub"
+                  = image_fields.file_field :file
+                  = image_fields.hidden_field :status, value: "sub"
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch Copy"
