@@ -7,8 +7,8 @@ before_action :authenticate_user!, only: [:create, :destroy]
   end
 
   def destroy
-    @like = Like.find(params[:id])
-    @like.destroy
+    like = Like.find(params[:id])
+    like.destroy
     @prototype = Prototype.find(params[:prototype_id])
   end
 
