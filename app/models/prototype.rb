@@ -5,6 +5,7 @@ class Prototype < ActiveRecord::Base
   has_many :sub_image, -> { where(status: 1).limit(3) }, class_name: "Image"
   accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :reject_image
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :title,
             :catch_copy,
