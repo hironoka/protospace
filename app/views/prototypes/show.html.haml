@@ -57,7 +57,7 @@
       #js-comments
         = render @comments
     .col-md-8
-      = form_for [@prototype, @comment], html: { class: "form-inline"}, data: { remote: true } do |f|
+      = form_for [@prototype, @comment], html: { class: "form-inline"}, remote: true do |f|
         = f.hidden_field :user_id, value: current_user.id
         %h4 Write a comment
         .row
