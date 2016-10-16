@@ -52,8 +52,7 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num
-        = @prototype.comments_count
+      %span.num (#{@prototype.comments_count})
       #js-comments
         = render @comments
     .col-md-8
@@ -64,4 +63,4 @@
           .form-group.col-md-10
             = f.text_area :comment, placeholder: "Your comments", rows: "3"
           .form-group.col-md-2
-            = f.submit "Comment", class: "button.btn.btn-primary"
+            = f.submit "Comment", class: "button btn btn-primary"
