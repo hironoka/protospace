@@ -54,8 +54,8 @@
       Comments
       %span.num
         = @prototype.comments_count
-      #comments
-        = render partial: "comments/comment", collection: @comments
+      #js-comments
+        = render @comments
     .col-md-8
       = form_for [@prototype, @comment], html: { class: "form-inline"}, data: { remote: true } do |f|
         = f.hidden_field :user_id, value: current_user.id
