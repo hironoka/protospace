@@ -24,6 +24,8 @@ class PrototypesController < ApplicationController
 
   def show
     @like  = @prototype.likes.find_by(user_id: current_user.id)
+    @comments = @prototype.comments.includes(:user)
+    @comment = Comment.new(prototype_id: @prototype_id)
   end
 
   def destroy
@@ -48,6 +50,7 @@ class PrototypesController < ApplicationController
   end
 
 private
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
