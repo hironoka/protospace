@@ -61,10 +61,12 @@ private
 
   def prototype_params
     params.require(:prototype).permit(
+    :id,
     :user_id,
     :title,
     :catch_copy,
     :concept,
+    :likes_count,
     images_attributes: [:id,  :prototype_id, :file, :status]
     )
   end
