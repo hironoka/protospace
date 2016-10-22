@@ -4,4 +4,4 @@
       = link_to "#{tag.name}", tag_path(tag.id)
     = link_to tag_path(tag.id) do
       .tag-meta
-        %i "#{tag.taggings.count}" Projects
+        %i #{tag.taggings.count} Projects
