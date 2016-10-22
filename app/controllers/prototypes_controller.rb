@@ -5,7 +5,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.eager_load(:user,:main_image)
+    @prototypes = Prototype.eager_load(:user, :main_image, :tags)
   end
 
   def new
@@ -61,13 +61,13 @@ private
 
   def prototype_params
     params.require(:prototype).permit(
-    :id,
     :user_id,
     :title,
     :catch_copy,
     :concept,
-    :likes_count,
     images_attributes: [:id,  :prototype_id, :file, :status]
+    ).merge(
+    tag_list: params[:prototype][:tag]
     )
   end
 
