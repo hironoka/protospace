@@ -10,7 +10,8 @@
           = link_to "Popular PROTO", popular_index_path, class: "btn-index btn-success"
         %li{ role: "presentation" }
           = link_to "Newest PROTO", newest_index_path, class: "btn-index btn-info"
-      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
+          %br
+      = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
 
 .container.proto-list
   .row
