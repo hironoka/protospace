@@ -1,4 +1,5 @@
 class Prototype < ActiveRecord::Base
+
   belongs_to :user
   has_many :images, dependent: :destroy
   has_one :main_image, -> { where(status: 0) }, class_name: "Image"
@@ -6,6 +7,9 @@ class Prototype < ActiveRecord::Base
   accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :reject_image
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :prototypes
 
   validates :title,
             :catch_copy,
