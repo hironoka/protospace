@@ -1,7 +1,7 @@
 class Prototypes::TagsController < ApplicationController
 
   def index
-    @tags = ActsAsTaggableOn::Tag.most_used
+    @tags = ActsAsTaggableOn::Tag.where("taggings_count != '0'").most_used
     render "tags/index"
   end
 
