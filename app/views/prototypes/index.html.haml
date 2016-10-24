@@ -5,13 +5,13 @@
 .filter-nav
   .container
     .row
-      %ul.nav.nav-pills.col-lg-11
+      %ul.nav.nav-pills.col-lg-10
         %li{ role: "presentation" }
           = link_to "Popular PROTO", popular_index_path, class: "btn-index btn-success"
         %li{ role: "presentation" }
           = link_to "Newest PROTO", newest_index_path, class: "btn-index btn-info"
           %br
-      = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
+      = link_to "View Tags", tags_path, class: "btn btn-default col-lg-2"
 
 .container.proto-list
   .row
