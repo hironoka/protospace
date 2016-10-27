@@ -11,6 +11,8 @@ class Prototype < ActiveRecord::Base
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :prototypes
 
+  paginates_per 8
+
   validates :title,
             :catch_copy,
             :concept,presence: true

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @prototypes = @user.prototypes
+    @prototypes = @user.prototypes.page(params[:page])
   end
 
   def edit
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
  private
- 
+
   def user_params
     params.require(:user).permit(
     :name,
